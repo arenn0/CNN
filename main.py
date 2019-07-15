@@ -42,13 +42,13 @@ y_test = to_categorical(y_test)
 
 model = Sequential()
 
-model.add(Conv2D(filters=32, kernel_size=3, activation='relu', strides=(1,1)))
+model.add(Conv2D(filters=64, kernel_size=3, activation='relu', strides=(1,1)))
 model.add(MaxPooling2D(pool_size=(2, 2)))
 model.add(Conv2D(filters=16, kernel_size=3, activation='relu'))
 model.add(MaxPooling2D(pool_size=(2, 2)))
 model.add(Flatten())
-model.add(Dense(400, activation='relu'))
-model.add(Dense(40, activation='relu'))
+model.add(Dense(800, activation='relu'))
+model.add(Dense(20, activation='relu'))
 model.add(Dense(N_classes, activation='softmax'))
 
 model.compile(loss=categorical_crossentropy, optimizer='adam', metrics=['accuracy'])
